@@ -23,16 +23,19 @@ Install dependencies (see above).
 Copy and paste the TUS_entry R function
 
 Load the mandatory files as follows:
+```
 * target = readNIfTI("PATH_TO_YOUR_DATA", reorient=F)
 * scalp = readNIfTI("PATH_TO_YOUR_DATA", reorient=F)
+```
 
-
-If needed, load the optional files as follows: 
+If needed, load the optional files as follows:
+```
 * t1 = readNIfTI("PATH_TO_YOUR_DATA", reorient=F)  # (default:NULL)
 * exclu = readNIfTI("PATH_TO_YOUR_DATA", reorient=F) # (default:NULL)
-
+```
 
 If needed, change the following parameters:
+```
 * output = "TEXT" # (default:NULL)
 * visual_confirm = T/F # (default:F)
 * resolution = NUMERICAL_VALUE # (default:0.33cm)
@@ -41,24 +44,28 @@ If needed, change the following parameters:
 * maximal_distance = NUMERICAL_VALUE # (default:7.46cm)
 * transducer_size = NUMERICAL_VALUE # (default:6.4cm)
 * kplan_offset = NUMERICAL_VALUE # (default:1.082cm)
-
+```
 
 Run the function as follows:
+```
 * OBJECT_NAME = TUS_entry(target=target, scalp=scalp) # add others parameters if changes are needed
-
+```
 
 Save required outputs as follows:
+```
 * writeNIfTI(OBJECT_NAME$MRI_Final_neuronav, "PATH_TO_YOUR_DATA", gzipped=F) # to save the nifti file for neuronavigation software
 * writeNIfTI(OBJECT_NAME$MRI_Final_validation, "PATH_TO_YOUR_DATA", gzipped=F) # to save the transducer as a binary map for 3D validation
 * sink("PATH_TO_YOUR_DATA) ; cat(OBJECT_NAME$report) ; sink() # to save the report
-
+```
 
 ## Note
 
 The input files should all have the same orientation, and dimensions and be aligned.
 The outputs will be provided in the same orientation as the input files.
 The scalp mask could be obtained with AFNI as follows:
+```
 * 3dAutomask -clfrac 0.4 -prefix OUTPUT INPUT # the clfrac could be modified and validate visually
+```
 
 Mango ([https://mangoviewer.com/mango.html]) could be usefull to generate the ROI targets and for the 3D visual validation. 
 
