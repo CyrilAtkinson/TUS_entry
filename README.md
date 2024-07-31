@@ -71,11 +71,11 @@ Mango ([https://mangoviewer.com/mango.html]) could be usefull to generate the RO
 
 ## Troubleshooting
 
-TO COMPLETE
+cyril.atkinsonclement@gmail.com
 
 ## Citing this work
 
-The full explanation and purpose of the code is described here: TO COMPLETE
+The full explanation and purpose of the code is described here: https://doi.org/10.1016/j.neurom.2024.06.496
 
 If you use this code, please acknowledge us by citing the above paper and the repository.
 
